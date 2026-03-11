@@ -8,16 +8,16 @@ struct Node
     Node* next;
 };
 
-void addSong(Node*& head, string title)
+void addSong(Node*& header, string title)
 {
     Node* newNode = new Node;
     newNode->songTitle = title;
-    newNode->next = head;
-	head = newNode;
+    newNode->next = header;
+	header = newNode;
 }
-void searchSong(Node* head, string title)
+void searchSong(Node* header, string title)
 {
-    Node* current = head;
+    Node* current = header;
     while (current != nullptr)
     {
         if (current->songTitle == title)
@@ -30,9 +30,9 @@ void searchSong(Node* head, string title)
     cout << "Song dont found: " << title << "\n";
 }
 
-void displaySongs(Node* head)
+void displaySongs(Node* header)
 {
-    Node* current = head;
+    Node* current = header;
     while (current != nullptr)
     {
         cout << current->songTitle << "\n";
@@ -42,7 +42,7 @@ void displaySongs(Node* head)
 
 int main()
 {
-	Node* playList = nullptr;
+	Node* myPlayList = nullptr;
 	int choice;
 	string title;
 
@@ -54,14 +54,14 @@ int main()
         if (choice == 1){
             cout << "Enter song title to add: ";
             getline(cin, title);
-            addSong(playList, title);
+            addSong(myPlayList, title);
         }else if (choice == 2) {
             cout << "Enter song title to search: ";
             getline(cin, title);
-            searchSong(playList, title);
+            searchSong(myPlayList, title);
         }else if(choice == 3){
             cout << "Playlist:\n";
-            displaySongs(playList);
+            displaySongs(myPlayList);
 		}
 	} while (choice != 4);
 }
