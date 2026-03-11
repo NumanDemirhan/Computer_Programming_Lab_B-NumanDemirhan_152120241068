@@ -60,8 +60,10 @@ int main()
             getline(cin, title);
             searchSong(myPlayList, title);
         }else if(choice == 3){
+            cout << "\n";
             cout << "Playlist:\n";
             displaySongs(myPlayList);
+            cout << "\n";
 		}
 	} while (choice != 4);
 }
