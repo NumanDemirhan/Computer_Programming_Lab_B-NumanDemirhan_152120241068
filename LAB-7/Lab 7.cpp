@@ -32,8 +32,6 @@ int main()
     file.read((char*)&s1, sizeof(Sensor));
     exSicaklik = s1.sicaklik;
     s1.sicaklik += E;
-    file.seekp(N * sizeof(Sensor), ios::beg);
-    file.write((char*)&s1, sizeof(Sensor));
     file.close();
 
     fstream SText;
